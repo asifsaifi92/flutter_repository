@@ -9,17 +9,21 @@ This project is a starting point for a Flutter application.
 Descriptive question :
 
 Q: 1.   Can we nest the Scaffold widget? Why or Why not?
+
 Answer: Yes, you can absolutely nest a Scaffold. Scaffold is just a widget, so you can put it anywhere a widget might go. By nesting a Scaffold, you can layer drawers, snack bars and bottom sheets.
 
 Q: 2.   How to reduce the rebuilding of the widget?
+
 Answer: Basically you can prevent unwanted build calling, using these way
         1. Use Provider library, so using it you can stop unwanted build method calling
         2. Create child Statefull class for individual small part of UI
 
 Q: 3.   How can I access platform(iOS or Android) specific code from Flutter?
+
 Answer: By using MethodChannel
 
 Q: 4.   What is BuildContext? What is its importance?
+
 Answer: BuildContext is actually the widget's element in the Element tree — so every widget has its own BuildContext.
         You usually use BuildContext to get a reference to the theme or to another widget. For example, if you want to show a material dialog, you need a reference to the scaffold. You can get it with Scaffold.of(context), where context is the build context. of() searches up the tree until it finds the nearest scaffold.
 
@@ -54,6 +58,7 @@ Q: 2    Identify the problem in the following code block and correct it?
         }
         return '$counting! Ready or not, here I come!';
         }
+
 Answer: Expensive Task.It blocks your app because counting to big number is a computationally expensive task.
         Dart code runs inside its own area of memory called an isolate — also known as memory thread. Each isolate has its own memory heap, which ensures that no isolate can access any other isolate's state.
 
